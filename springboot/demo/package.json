@@ -1,6 +1,6 @@
 {
     "scripts": {
-      "vercel-build": "chmod +x ./gradlew && ./gradlew build",
+      "vercel-build": "chmod +x ./gradlew && ./gradlew clean build",
       "start": "serve -s build"
     },
     "dependencies": {

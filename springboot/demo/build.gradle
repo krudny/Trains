@@ -5,12 +5,11 @@ plugins {
 	id 'application'
 }
 
-group = 'com.trains'
-version = '0.0.1-SNAPSHOT'
+group 'com.trains'
+version '1.0-SNAPSHOT'
 
-java {
-	sourceCompatibility = '17'
-}
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 configurations {
 	compileOnly {
