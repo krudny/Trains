@@ -47,7 +47,7 @@ export default function Reservation() {
     }
     useEffect(() => {
 
-        request("GET", '/api/getOccupiedSeats', {}, {
+        request("GET", 'https://trains-backend-bvln.onrender.com/api/getOccupiedSeats', {}, {
 
             routeId: routeId,
             startStation: startStation,
@@ -107,7 +107,7 @@ export default function Reservation() {
 
                 console.error('Błąd podczas pobierania danych o miejscach:', error);
             });
-        request("GET", 'api/getAllDiscounts', {}, {})
+        request("GET", 'https://trains-backend-bvln.onrender.com/api/getAllDiscounts', {}, {})
             .then(response => {
                 if (response.data) {
                     setDiscounts(response.data);
@@ -140,10 +140,10 @@ export default function Reservation() {
             return;
         }
 
-        request("GET", "/api/get_user",{},{})
+        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user",{},{})
         .then(response1=>{
             setUser(response1.data);
-            request("POST", 'api/reservations/add', {
+            request("POST", 'https://trains-backend-bvln.onrender.com/api/reservations/add', {
                 userId: response1.data.userId,
                 discountId: discountId,
                 routeId: routeId,

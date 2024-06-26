@@ -25,12 +25,12 @@ export default function UserDashboard() {
       }
 
     useEffect(() => {
-        request("GET", "/api/get_user", {}, {})
+        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user", {}, {})
             .then(response1 => {
                 // setLoading(true);
                 console.log(loading);
                 setUser(response1.data)
-                request("GET", "/api/future_trips", {}, { user_id: response1.data.userId })
+                request("GET", "https://trains-backend-bvln.onrender.com/api/future_trips", {}, { user_id: response1.data.userId })
                     .then(response => {
                         setFuture(response.data);
                         if (activeTab === 'future') {
@@ -38,7 +38,7 @@ export default function UserDashboard() {
                         }
 
 
-                        request("GET", "/api/past_trips", {}, { user_id: response1.data.userId })
+                        request("GET", "https://trains-backend-bvln.onrender.com/api/past_trips", {}, { user_id: response1.data.userId })
                             .then(response => {
                                 setPast(response.data);
                                 if (activeTab === 'past') {
@@ -71,12 +71,12 @@ export default function UserDashboard() {
 
 
     function reservationPrice() {
-        request("GET", "/api/get_user", {}, {})
+        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user", {}, {})
             .then(response1 => {
                 // setLoading(true);
                 console.log(loading);
                 setUser(response1.data)
-                request("GET", "/api/reservations/price", {}, { reservationId: reservationId })
+                request("GET", "https://trains-backend-bvln.onrender.com/api/reservations/price", {}, { reservationId: reservationId })
                     .then(response => {
                         setPrice(response.data);
 
@@ -112,10 +112,10 @@ export default function UserDashboard() {
     };
     console.log(future);
     function change_status(status, reservationId) {
-        request("GET", "/api/get_user", {}, {})
+        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user", {}, {})
             .then(response1 => {
                 setUser(response1.data);
-                request("POST", 'api/reservations/change_status', {
+                request("POST", 'https://trains-backend-bvln.onrender.com/api/reservations/change_status', {
                     reservationId: reservationId,
                     status: status
                 }, {})

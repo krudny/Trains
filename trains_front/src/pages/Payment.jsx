@@ -25,9 +25,9 @@ export default function Payment() {
 
 
     function change_status(status){
-        request("GET", "/api/get_user",{},{})
+        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user",{},{})
         .then(response1=>{
-            request("POST", 'api/reservations/change_status', {
+            request("POST", 'https://trains-backend-bvln.onrender.com/api/reservations/change_status', {
                 reservationId: reservationId,
                 status: status
             }, {})
