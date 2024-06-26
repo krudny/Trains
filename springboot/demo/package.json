@@ -1,0 +1,10 @@
+{
+    "scripts": {
+      "vercel-build": "chmod +x ./gradlew && ./gradlew build",
+      "start": "serve -s build"
+    },
+    "dependencies": {
+      "serve": "^13.0.2"
+    }
+  }
+  
