@@ -47,7 +47,7 @@ export default function Reservation() {
     }
     useEffect(() => {
 
-        request("GET", 'https://trains-backend-bvln.onrender.com/api/getOccupiedSeats', {}, {
+        request("GET", 'https://trains-backend-87uj.onrender.com/api/getOccupiedSeats', {}, {
 
             routeId: routeId,
             startStation: startStation,
@@ -95,7 +95,7 @@ export default function Reservation() {
             toast.error("Your session expired");
             return;
         }
-        request("GET", 'api/getAllSeats', {}, {})
+        request("GET", 'https://trains-backend-87uj.onrender.com/api/getAllSeats', {}, {})
             .then(response => {
                 if (response.data) {
                     const sortedSeats = response.data.sort((a, b) => a.seatNumber - b.seatNumber);
@@ -107,7 +107,7 @@ export default function Reservation() {
 
                 console.error('Błąd podczas pobierania danych o miejscach:', error);
             });
-        request("GET", 'https://trains-backend-bvln.onrender.com/api/getAllDiscounts', {}, {})
+        request("GET", 'https://trains-backend-87uj.onrender.com/api/getAllDiscounts', {}, {})
             .then(response => {
                 if (response.data) {
                     setDiscounts(response.data);
@@ -140,10 +140,10 @@ export default function Reservation() {
             return;
         }
 
-        request("GET", "https://trains-backend-bvln.onrender.com/api/get_user",{},{})
+        request("GET", "https://trains-backend-87uj.onrender.com/api/get_user",{},{})
         .then(response1=>{
             setUser(response1.data);
-            request("POST", 'https://trains-backend-bvln.onrender.com/api/reservations/add', {
+            request("POST", 'https://trains-backend-87uj.onrender.com/api/reservations/add', {
                 userId: response1.data.userId,
                 discountId: discountId,
                 routeId: routeId,

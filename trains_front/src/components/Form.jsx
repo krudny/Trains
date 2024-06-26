@@ -30,7 +30,7 @@ export default function Form() {
             }
         }
 
-        const url = 'https://trains-backend-bvln.onrender.com/api/stations';
+        const url = 'https://trains-backend-87uj.onrender.com/api/stations';
         request("GET",url,{},{}).then(response => {
             setStationNames(response.data);
         }).catch(error => {
@@ -41,7 +41,7 @@ export default function Form() {
     function searchRoute() {
         const { date, start_station, end_station } = routeData;
         
-        axios.get('https://trains-backend-bvln.onrender.com/api/find_route', { params: { departure_date: date, start_station: start_station, end_station: end_station }})
+        axios.get('https://trains-backend-87uj.onrender.com/api/find_route', { params: { departure_date: date, start_station: start_station, end_station: end_station }})
             .then(response => {
                 setFetchedData(response.data); 
                 localStorage.setItem('fetchedData', JSON.stringify({ data: response.data, routeData }));

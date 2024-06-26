@@ -21,7 +21,7 @@ export default function Login() {
     function login(e) {
         e.preventDefault()
         const { login, password } = data;
-        request("POST", "https://trains-backend-bvln.onrender.com/api/auth/authenticate", { login: login, password: password },{})
+        request("POST", "https://trains-backend-87uj.onrender.com/api/auth/authenticate", { login: login, password: password },{})
             .then((response) => { 
                 setAuthToken(response.data.token); 
                 console.log(response.data.userId); 
