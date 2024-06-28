@@ -15,7 +15,7 @@ export default function Register() {
     const registerUser = async (data) => {
         const { firstname, lastname, email, phone, login, password } = data;
 
-        request("POST", "https://trains-backend-87uj.onrender.com/api/auth/register", {
+        request("POST", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/auth/register", {
             firstname: firstname,
             lastname: lastname,
             email: email,

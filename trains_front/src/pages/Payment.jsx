@@ -25,9 +25,9 @@ export default function Payment() {
 
 
     function change_status(status){
-        request("GET", "https://trains-backend-87uj.onrender.com/api/get_user",{},{})
+        request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/get_user",{},{})
         .then(response1=>{
-            request("POST", 'https://trains-backend-87uj.onrender.com/api/reservations/change_status', {
+            request("POST", 'https://trains-backend-sufjqir6ra-uc.a.run.app/api/reservations/change_status', {
                 reservationId: reservationId,
                 status: status
             }, {})

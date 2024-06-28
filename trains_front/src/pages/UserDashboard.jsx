@@ -25,12 +25,12 @@ export default function UserDashboard() {
       }
 
     useEffect(() => {
-        request("GET", "https://trains-backend-87uj.onrender.com/api/get_user", {}, {})
+        request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/get_user", {}, {})
             .then(response1 => {
                 // setLoading(true);
                 console.log(loading);
                 setUser(response1.data)
-                request("GET", "https://trains-backend-87uj.onrender.com/api/future_trips", {}, { user_id: response1.data.userId })
+                request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/future_trips", {}, { user_id: response1.data.userId })
                     .then(response => {
                         setFuture(response.data);
                         if (activeTab === 'future') {
@@ -38,7 +38,7 @@ export default function UserDashboard() {
                         }
 
 
-                        request("GET", "https://trains-backend-87uj.onrender.com/api/past_trips", {}, { user_id: response1.data.userId })
+                        request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/past_trips", {}, { user_id: response1.data.userId })
                             .then(response => {
                                 setPast(response.data);
                                 if (activeTab === 'past') {
@@ -71,12 +71,12 @@ export default function UserDashboard() {
 
 
     function reservationPrice() {
-        request("GET", "https://trains-backend-87uj.onrender.com/api/get_user", {}, {})
+        request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/get_user", {}, {})
             .then(response1 => {
                 // setLoading(true);
                 console.log(loading);
                 setUser(response1.data)
-                request("GET", "https://trains-backend-87uj.onrender.com/api/reservations/price", {}, { reservationId: reservationId })
+                request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/reservations/price", {}, { reservationId: reservationId })
                     .then(response => {
                         setPrice(response.data);
 
@@ -112,10 +112,10 @@ export default function UserDashboard() {
     };
     console.log(future);
     function change_status(status, reservationId) {
-        request("GET", "https://trains-backend-87uj.onrender.com/api/get_user", {}, {})
+        request("GET", "https://trains-backend-sufjqir6ra-uc.a.run.app/api/get_user", {}, {})
             .then(response1 => {
                 setUser(response1.data);
-                request("POST", 'https://trains-backend-87uj.onrender.com/api/reservations/change_status', {
+                request("POST", 'https://trains-backend-sufjqir6ra-uc.a.run.app/api/reservations/change_status', {
                     reservationId: reservationId,
                     status: status
                 }, {})
