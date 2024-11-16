@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {useState} from "react";
+import { useState } from "react";
 
 interface Property {
   type: string;
@@ -31,12 +31,11 @@ const properties: Property[] = [
 
 export default function SearchForm() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const handleDateChange = (date : Date | null) => setSelectedDate(date);
-
+  const handleDateChange = (date: Date | null) => setSelectedDate(date);
 
   return (
     <div className="flex">
-      <div className="flex bg-neutral-50 rounded-lg w-fit ">
+      <div className="flex bg-neutral-50 rounded-lg w-fit">
         {properties.map((property) => (
           <div key={property.id} className="w-60 h-16">
             <div className="flex items-center h-full border-r-2 border-gray-200">
