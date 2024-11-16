@@ -8,8 +8,8 @@ interface AuthComponentProps {
 
 export default function AuthComponent({ type, inputs }: AuthComponentProps) {
   return (
-    <div className="bg-black bg-opacity-45 w-full h-full absolute flex justify-center items-center select-none">
-      <div className="flex flex-col justify-center items-center bg-zinc-900 bg-opacity-80 px-20 py-10">
+    <div className="w-screen flex justify-center items-center select-none relative">
+      <div className="w-3/12 flex flex-col justify-center items-center bg-zinc-950 bg-opacity-90 px-20 py-10">
         <div className="flex justify-center items-center my-10">
           <h1 className="font-bold text-6xl text-white">
             {type === "register" ? "Register" : "Log In"}
@@ -18,7 +18,7 @@ export default function AuthComponent({ type, inputs }: AuthComponentProps) {
 
         <div className="w-full flex justify-center items-center">
           <form
-            className={`w-full max-w-4xl ${type === "login" ? "flex flex-col" : "grid grid-cols-2 gap-4"}`}
+            className={`w-full ${type === "login" ? "flex flex-col" : "grid grid-cols-1 gap-4"}`}
           >
             {inputs.map((item) => (
               <div
@@ -41,9 +41,9 @@ export default function AuthComponent({ type, inputs }: AuthComponentProps) {
           </form>
         </div>
 
-        <div className="mt-10">
+        <div className="mt-4">
           <Link href={type === "register" ? "/login" : "/register"}>
-            <p className="text-gray-200 text-lg">
+            <p className="font-roboto text-gray-200 text-lg">
               {type === "register"
                 ? "Already have an account? Log in!"
                 : "Don't have an account? Register!"}

@@ -10,6 +10,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Aeonik"],
+        dyna: ["DynaPuff"],
+        roboto: ["Roboto"],
       },
       colors: {
         background: "var(--background)",
