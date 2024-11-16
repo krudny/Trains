@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface FormInput {
   type: string;
@@ -51,7 +52,7 @@ export default function Page() {
 
       <div className="bg-black bg-opacity-45 w-full h-full absolute flex justify-center items-center select-none">
         <div className="flex flex-col justify-center items-center bg-zinc-900 bg-opacity-80 px-20">
-          <div className="py-8 flex justify-center items-center my-4">
+          <div className="flex justify-center items-center my-10">
             <h1 className="font-bold text-6xl text-white">Register</h1>
           </div>
           <div className="w-full  flex justify-center items-center">
@@ -76,7 +77,14 @@ export default function Page() {
               ))}
             </form>
           </div>
-          <div className="w-full h-16 flex justify-center items-center py-12 my-4">
+          <div className="mt-10">
+            <Link href="/login">
+              <p className="text-gray-200 text-lg">
+                Already have account? Log in!
+              </p>
+            </Link>
+          </div>
+          <div className="w-full h-16 flex justify-center items-center py-12 mb-4">
             <button className="py-3.5 px-8 rounded bg-lime-500 text-zinc-950 text-xl hover:bg-lime-600 transition-colors duration-200 ease-linear">
               Create account!
             </button>
