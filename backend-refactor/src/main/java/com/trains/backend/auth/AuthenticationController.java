@@ -20,6 +20,7 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> authenticate(
             @RequestBody AuthenticationRequest request
     ) {
+        System.out.println("CHECK1");
         return ResponseEntity.ok(service.authenticate(request));
     }
 }

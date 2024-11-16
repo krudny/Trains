@@ -3,9 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Aeonik';
-    src: url('../public/fonts/AeonikTRIAL-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Aeonik";
+  src: url("../public/fonts/AeonikTRIAL-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
-

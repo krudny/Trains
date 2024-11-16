@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Aeonik'],
+        sans: ["Aeonik"],
       },
       colors: {
         background: "var(--background)",

@@ -28,13 +28,22 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            return;
+        }
+
         final String authHeader = request.getHeader("Authorization");
-//        String requestURI = request.getRequestURI();
-//
-//        if ("/api/auth/register".equals(requestURI) || "/api/auth/authenticate".equals(requestURI)) {
-//            filterChain.doFilter(request, response);
-//            return;
-//        }
+        String requestURI = request.getRequestURI();
+
+        if ("/api/auth/register".equals(requestURI) || "/api/auth/authenticate".equals(requestURI)) {
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
